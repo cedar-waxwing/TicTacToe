@@ -1,20 +1,25 @@
-
+/*the clickNumber function stores how many clicks there have been in the whole game. I want to keep this, 
+as it can be used for: Whose turn it is; How many turns have been taken; When to start looking for win conditions;
+When the game is over (9 clicks). May reformat where this is/how it looks in future. */
 //start clickCount at 0 
-//once they are clicked, the click count is incremented by one. Figure out state to 
-//Need to have something in here that does not allow a double click. Boolean?
-
-//method -- say that for all the tiles, they need to be bound to this clickhandler
 let clicker = 0
 function clickNumber() {
+    //once they are clicked, the click count is incremented by one. 
     clickCount++;
     console.log(clickCount);
+    //commented the below out bc array needs to be empty to start
+    // for (let i = 0; i < 9; i++) {
+    //     storeTurns.push("")
+    // }
+    // console.log(storeTurns)
     storeTurns.splice([0], "", "A")
     console.log(storeTurns)
-    //________
+    //below is another duty of clickNumber -- telling whose turn it is based on the overall click count of the game.
     if (clickCount % 2 == 0) {
         xPlayer = true;
         yPlayer = false;
-        symbol = document.createTextNode("X")
+        //Do I need the line below here? Nothing happened when I commented it out 
+        // symbol = document.createTextNode("")
     }
     else {
         yPlayer = true;
@@ -22,47 +27,5 @@ function clickNumber() {
     }
     // console.log(yPlayer)
     console.log(xPlayer)
-   
-}
-
-
-//need to assign x's to player1 and y's to player2
-//need to make it so that once you click on a square, you can't click on it again. use a boolean "switch" for that
-
-// if clickNumber 
-// //Whose turn is it?
-//COUNT CLICKS 
-// function whoseTurn() {
-//      {
-//       click = personX;
-//      } click = personY;
-//     }
-
-//click 1 = X player
-//click 2 = Y player 
-//odd # clicks = x player
-//even # clicks = y player 
-
-
-
-/* 
-initialize
-helper function for dynamic rendering 
-// generateElement function 
-render method
-
-
-tile click event listener
-    //moves >5 ? condition
-    //win condition, tie condition  
-    -> condition to see if we can start checking at 5 moves
-    set tile clickability -- do it in the tile click event (same function as # below)
-    switch current player
-
--win condition
-    -did we have a winner?
-    -set tile clickability for all tiles #
-    -display final game state
-    -restart click event listener
-
-*/
+   //_________
+ }

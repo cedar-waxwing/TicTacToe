@@ -1,11 +1,6 @@
-
-//function that creates the board 
-/*3 columns and 3 rows are created below*/
-//to stop clicks after one click:
-//if (xPlayer == true || yPlayer == true)
-
 class TicTacToeBoard {
     constructor() {
+        this.tileArray = [];
     }
     whichSymbol() {
         if (clickCount % 2 == 0) {
@@ -18,53 +13,63 @@ class TicTacToeBoard {
         symbol = document.createTextNode(this.whichSymbol());
         tile.appendChild(symbol);
     }
-
+//function that creates the board 
+/*3 columns and 3 rows are created below*/
     createBoard() {
         let App = document.getElementById("App")
-        // let App = document.getElementByID("App")
         for (let i = 0; i < 3; i++) {
             let row = document.createElement("div")
             row.className = "row"
             for (let j = 0; j < 3; j++) {
-                let tile = document.createElement("div")
-                // tile.id = `col${ij}`
-                tile.className = "col border border-dark p-4"
-                tile.addEventListener("click", clickNumber)
-                row.appendChild(tile)
-                /*when I set this.boardshipcs(tile), it passes tile into the funciton but also fires the fuction. 
+                let tileObj = new Tile()
+                let tileHTMLElement = document.createElement("div")
+                // tileHTMLElement.id = `col${ij}`
+                tileObj.id = i * 3 + j //this is i and j in the for loop to get unique id
+                tileHTMLElement.className = "col border border-dark p-4"
+                //below, there are 9 "col" class items sitting in an array. The for loop above loops through them, adding an event listener to each. 
+                //for all the tiles, they need to be bound to this clickhandler
+                tileHTMLElement.addEventListener("click", clickNumber)
+                row.appendChild(tileHTMLElement)
+                /*when I set this.boardshipcs(tileHTMLElement), it passes tileHTMLElement into the funciton but also fires the fuction. 
                 I want the fuction to only fire when clicked. the line below does not work.
-                tile.addEventListener("click", this.boardChips(tile)); */
-                /* bind these parameters (this, tile) to this fuction (this.boardChips). Bind allows you to pass in the
-                tile value without running the function  */
-                tile.addEventListener("click", this.boardChips.bind(this, tile));
-                console.log(symbol)
+                tileHTMLElement.addEventListener("click", this.boardChips(tileHTMLElement)); */
+                
+                /* bind these parameters (this, tileHTMLElement) to this fuction (this.boardChips). Bind allows you to pass in the
+                tileHTMLElement value without running the function  */
+                tileHTMLElement.addEventListener("click", this.boardChips.bind(this, tileHTMLElement));
+                //intrduces tileHTML for the Tile class below.
+                tileObj.tileHTML = tileHTMLElement
+                this.tileArray.push(tileObj);
             }
             App.appendChild(row)
         }
+        console.log(this.tileArray);
+    }
+}
+class Tile {
+    constructor() {
+        //Setting up elements in the array
+        this.hasBeenClicked = false;
+        /*Below -- we have to bind this -- the scope of our class -- to the function.
+        The clickability function is used within the scope of the tile class, and only within the scope of the tile class. 
+        That's all this does, just locates clickability properly.*/
+        this.clickability = this.clickability.bind(this);
+        this.clickChange = this.clickChange.bind(this);
+        this.id = "";
+        //below, this links the tileHTMLelement from createBoard with the tile class. In the array this.tileArray, 
+        //tileHTML = div.col.border.border-dark.p-4
+        this.tileHTML = "";
+    }
+
+    clickChange () {
+        this.hasBeenClicked = true;
+    }
+
+
+    clickability() {
+        tileHTML.addEventListener("click", this.clickChange())
+        console.log(clickChange)
     }
     
-
+    
 }
-
-
-
-
-
-//this function view.createboard should be a method/member of instance of that class
-
-
-
-/*
-onclick 
-if player 1, display X 
-if player 2, display O 
-
-This hinges on knowing whether player 1 or player 2 is going
-X or O? X or O is rendered on something -- 
-a tile. X or O or blank. Needs to be within the rows.    */
-
-/* Reset button appears once someone wins, which resets the entire game, does 
-NOT refresh the page*/
-
-//function that shows whose turn it is 
-
