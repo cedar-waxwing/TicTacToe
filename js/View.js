@@ -1,10 +1,24 @@
 
 //function that creates the board 
 /*3 columns and 3 rows are created below*/
+//to stop clicks after one click:
+//if (xPlayer == true || yPlayer == true)
 
 class TicTacToeBoard {
     constructor() {
     }
+    whichSymbol() {
+        if (clickCount % 2 == 0) {
+            return "O"
+        } return "X"
+    }
+
+    boardChips(tile) {
+        console.log(tile);
+        symbol = document.createTextNode(this.whichSymbol());
+        tile.appendChild(symbol);
+    }
+
     createBoard() {
         let App = document.getElementById("App")
         // let App = document.getElementByID("App")
@@ -17,12 +31,22 @@ class TicTacToeBoard {
                 tile.className = "col border border-dark p-4"
                 tile.addEventListener("click", clickNumber)
                 row.appendChild(tile)
+                /*when I set this.boardshipcs(tile), it passes tile into the funciton but also fires the fuction. 
+                I want the fuction to only fire when clicked. the line below does not work.
+                tile.addEventListener("click", this.boardChips(tile)); */
+                /* bind these parameters (this, tile) to this fuction (this.boardChips). Bind allows you to pass in the
+                tile value without running the function  */
+                tile.addEventListener("click", this.boardChips.bind(this, tile));
+                console.log(symbol)
             }
             App.appendChild(row)
         }
     }
     
+
 }
+
+
 
 
 

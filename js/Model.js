@@ -1,6 +1,6 @@
 let clickCount = 0;
 let storeTurns = [];
-
+let symbol = "";
 
 //Need to have something here that stops the click count at 9. 
 // if(clickCount >=9) {
