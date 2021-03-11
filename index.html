@@ -12,21 +12,29 @@
 </head>
 
 <body>
-  <div class="container" id="App">
+  <div class="container">
+    &nbsp;
     <h1>Tic-Tac-Toe</h1>
-
+    &nbsp;
     <h2>Whose turn is it?<br>
-      <div>X</div> <br>
-      <div>O</div>
+      &nbsp;
+      <div class ="">X</div>
+      <!-- I'm trying to use javascript to dynamically render the X and O. I'm not sure how to indicate that it should go HERE on the page.  -->
+      <div class="">O</div>
     </h2>
   </div>
+  <div class="container" id="App">
 
-<script src="./js/Model.js"></script>
-<script src="./js/Controller.js"></script>
-<script src="./js/View.js"></script>
-<script src="./js/App.js"></script>
+  </div>
+  <button onclick="resetFunction()" id="resetbutton">Reset</button>
+
+  <script src="./js/Model.js"></script>
+  <script src="./js/Controller.js"></script>
+  <script src="./js/View.js"></script>
+  <script src="./js/App.js"></script>
 
 
 
 </body>
+
 </html>
