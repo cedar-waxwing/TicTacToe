@@ -82,33 +82,42 @@ class TicTacToeBoard {
             if (this.tileArray[0].whoami == symbol && this.tileArray[1].whoami == symbol && this.tileArray[2].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
                 // setTimeout("alert('hello world');", 1)
             } if (this.tileArray[0].whoami == symbol && this.tileArray[3].whoami == symbol && this.tileArray[6].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
             } if (this.tileArray[0].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[8].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
             } if (this.tileArray[1].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[7].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
             } if (this.tileArray[2].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[6].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
             } if (this.tileArray[2].whoami == symbol && this.tileArray[5].whoami == symbol && this.tileArray[8].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
             } if (this.tileArray[3].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[5].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
             } if (this.tileArray[6].whoami == symbol && this.tileArray[7].whoami == symbol && this.tileArray[8].whoami == symbol) {
                 setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
+                return;
             }
             else if (this.clickCount == 9) {
                 setTimeout("alert('Tie!');", 250)
                 gamedone = true;
                 console.log("It's a draw!")
+                return;
             }
         }
     }
