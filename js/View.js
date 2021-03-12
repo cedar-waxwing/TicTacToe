@@ -51,7 +51,8 @@ class TicTacToeBoard {
     }
 
     clickEvent(obj) {
-        if (!obj.hasBeenClicked) {
+        if (!obj.hasBeenClicked && gamedone == false) {
+            document.getElementById("whoseturn").innerHTML = this.whichSymbol()
             this.clickCount++
             console.log("this is the first time I was clicked.")
             //this is a problem because all tiles have the same class, button
