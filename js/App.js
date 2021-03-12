@@ -1,20 +1,3 @@
-let ttb = new TicTacToeBoard();
-
-function init() {
- ttb.createBoard()
-}
-
-window.onload = init
-
-
-function resetFunction() {
-    let App = document.getElementById("App")
-    // App.removeChild(App)
-    App.innerHTML=""
-    ttb = new TicTacToeBoard();
-    init()
-}
-
 // function hideResetButton() {
 //     if (gamedone = false) {
 //         document.getElementById("resetbutton").style.visibility="hidden";
