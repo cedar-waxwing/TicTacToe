@@ -7,11 +7,11 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <!-- <link href="./style.css" rel="stylesheet"> -->
+   <link href="./css/style.css" rel="stylesheet"> 
   <title>TicTacToe</title>
 </head>
 
-<body>
+<body class="imagebackground">
   <div class="container">
     &nbsp;
     <h1>Tic-Tac-Toe</h1>
@@ -21,11 +21,12 @@
       <div id="whoseturn"></div>
     </h2>
   </div>
-  <div class="container" id="App">
-
+  <div class="container boardfont text-center" id="App">
   </div>
-  <button onclick="resetFunction()" id="resetbutton">Reset</button>
-
+  &nbsp;
+  <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+  <button onclick="resetFunction()" id="resetbutton" class="me-md-2">Reset</button>
+ </div>
   <script src="./js/Model.js"></script>
   <script src="./js/Controller.js"></script>
   <script src="./js/View.js"></script>

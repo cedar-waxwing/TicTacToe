@@ -1,3 +1,18 @@
 .container {
     height: 100%
 }
+
+.imagebackground {
+    background-image: url("../img/space_background.jpg");
+    color: orange;
+    font-family: Brush Script MT;
+}
+
+.boardfont {
+    font-size: 30pt;
+
+}
+
+.tile {
+    min-height: 200px;
+}

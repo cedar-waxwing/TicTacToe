@@ -10,6 +10,7 @@ class TicTacToeBoard {
     //function that creates the board 
     /*3 columns and 3 rows are created below*/
     createBoard() {
+        gamedone = false;
         let App = document.getElementById("App")
         for (let i = 0; i < 3; i++) {
             let row = document.createElement("div")
@@ -19,7 +20,7 @@ class TicTacToeBoard {
                 let tileHTMLElement = document.createElement("div")
                 // tileHTMLElement.id = `col${ij}`
                 tileObj.id = i * 3 + j //this is i and j in the for loop to get unique id
-                tileHTMLElement.className = "col border border-dark p-4"
+                tileHTMLElement.className = "col border border-warning p-4 tile mx-auto"
                 //below, there are 9 "col" class items sitting in an array. The for loop above loops through them, adding an event listener to each. 
                 //for all the tiles, they need to be bound to this clickhandler
                 tileHTMLElement.addEventListener("click", this.clickEvent.bind(this, tileObj));
@@ -79,34 +80,35 @@ class TicTacToeBoard {
         //putting everything in if gamedone == false prevents more alerts from popping up. Does not stop additional clicks.
         if (gamedone == false) {
             if (this.tileArray[0].whoami == symbol && this.tileArray[1].whoami == symbol && this.tileArray[2].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
                 // setTimeout("alert('hello world');", 1)
             } if (this.tileArray[0].whoami == symbol && this.tileArray[3].whoami == symbol && this.tileArray[6].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
             } if (this.tileArray[0].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[8].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
             } if (this.tileArray[1].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[7].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
             } if (this.tileArray[2].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[6].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
             } if (this.tileArray[2].whoami == symbol && this.tileArray[5].whoami == symbol && this.tileArray[8].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
             } if (this.tileArray[3].whoami == symbol && this.tileArray[4].whoami == symbol && this.tileArray[5].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
             } if (this.tileArray[6].whoami == symbol && this.tileArray[7].whoami == symbol && this.tileArray[8].whoami == symbol) {
-                setTimeout("alert(symbol + ' wins!');", 500)
+                setTimeout("alert(symbol + ' wins!');", 250)
                 gamedone = true;
             }
             else if (this.clickCount == 9) {
-                setTimeout("alert('It's a draw!''));", 500)
+                setTimeout("alert('Tie!');", 250)
                 gamedone = true;
+                console.log("It's a draw!")
             }
         }
     }

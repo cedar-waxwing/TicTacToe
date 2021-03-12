@@ -11,6 +11,7 @@ function resetFunction() {
     let App = document.getElementById("App")
     // App.removeChild(App)
     App.innerHTML=""
+    ttb = new TicTacToeBoard();
     init()
 }
 
