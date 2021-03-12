@@ -1,12 +1,38 @@
 let ttb = new TicTacToeBoard();
-ttb.createBoard()
 
-//this is my function to call 
+function init() {
+ ttb.createBoard()
+}
 
-//per justin  -- init function in this app page
-//init method
-// for (let i = 0; i < 9; i++) {
-//     storeTurns.push("")
+window.onload = init
+
+
+function resetFunction() {
+    let App = document.getElementById("App")
+    // App.removeChild(App)
+    App.innerHTML=""
+    ttb = new TicTacToeBoard();
+    init()
+}
+
+// function hideResetButton() {
+//     if (gamedone = false) {
+//         document.getElementById("resetbutton").style.visibility="hidden";
+//     } else if (gamedone = true) {
+//         document.getElementById("resetbutton").style.visibility="visible";
+//     console.log(gamedone)
+//     }
 // }
-// console.log(storeTurns)
-//commenting this ^ out bc array needs to be empty to start
+
+// hideResetButton()
+
+//onclick run whosedisplay 
+// function whoseTurnDisplay() {
+    //Here, display an X or an O depending on how many clicks in the game 
+    
+    // console.log(ttb.whichSymbol())
+
+
+// r/e render method -- my createBoard function is effectively rendering *everything* -- next time try not to do this, keep things
+//a little less integrated so that I have more control to make individual changes. 
+
